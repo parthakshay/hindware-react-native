@@ -1,10 +1,12 @@
 import * as React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 import LoginScreen from '../screens/LoginScreen';
@@ -58,23 +60,42 @@ function TransactionStack() {
 export default function RootNavigator() {
         return (
                 <NavigationContainer>
-                        <Tab.Navigator
-                                initialRouteName="Feed"
-                                screenOptions={{ headerShown: false, }}>
-                                <Tab.Screen name="HomeStack" component={HomeStack} options={{
-                                        headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<Icon name="home" size={25} color="#444" />),
-                                }} />
+                        <Tab.Navigator screenOptions={({ route }) => ({
+                                tabBarIcon: ({ focused, color, size }) => {
+                                        let iconName;
+
+                                        if (route.name === 'Feed') {
+                                                iconName = focused
+                                                        ? 'ios-information-circle'
+                                                        : 'ios-information-circle-outline';
+                                        } else if (route.name === 'Settings') {
+                                                iconName = focused ? 'ios-list-box' : 'ios-list';
+                                        }
+
+                                        // You can return any component that you like here!
+                                        return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+                                },
+                        })}
+                                tabBarOptions={{
+                                        activeTintColor: 'tomato',
+                                        inactiveTintColor: 'gray',
+                                }}
+                        >
+                                <Tab.Screen name="HomeStack" component={HomeStack}
+                                        options={{
+                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="home" size={25} color="#444" />),
+                                        }} />
                                 <Tab.Screen name="Transactions"
                                         component={TransactionStack}
                                         option={{
-                                                showIcon: true, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
-                                                        <Ionicons name="logo-usd" size={25} color="#444" />),
+                                                headerShown: false, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
+                                                        <MaterialCommunityIcons name="currency-usd" size={25} color="#444" />),
                                         }} />
                                 <Tab.Screen name="SettingsStack"
                                         component={SettingsStack}
                                         options={{
-                                                tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
-                                                        <Ionicons name="cog" size={25} color="#444" />),
+                                                headerShown: false, tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
+                                                        <MaterialCommunityIcons name="cog" size={25} color="#444" />),
                                         }} />
 
                         </Tab.Navigator>
