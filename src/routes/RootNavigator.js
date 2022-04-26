@@ -74,7 +74,7 @@ export default function RootNavigator() {
                                         component={SettingsStack}
                                         options={{
                                                 tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
-                                                        <Ionicons name="cog-usd" size={25} color="#444" />),
+                                                        <Ionicons name="cog" size={25} color="#444" />),
                                         }} />
 
                         </Tab.Navigator>
