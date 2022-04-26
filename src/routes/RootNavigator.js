@@ -61,19 +61,20 @@ export default function RootNavigator() {
                         <Tab.Navigator
                                 initialRouteName="Feed"
                                 screenOptions={{ headerShown: false, }}>
-                                <Tab.Screen name="HomeStack" component={HomeStack} options={{
-                                        headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<Icon name="home" size={25} color="#444" />),
-                                }} />
+                                <Tab.Screen name="HomeStack" component={HomeStack}
+                                        options={{
+                                                headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<Icon name="home" size={25} color="#444" />),
+                                        }} />
                                 <Tab.Screen name="Transactions"
                                         component={TransactionStack}
                                         option={{
-                                                showIcon: true, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
+                                                headerShown: false, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
                                                         <Ionicons name="logo-usd" size={25} color="#444" />),
                                         }} />
                                 <Tab.Screen name="SettingsStack"
                                         component={SettingsStack}
                                         options={{
-                                                tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
+                                                headerShown: false, tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
                                                         <Ionicons name="cog" size={25} color="#444" />),
                                         }} />
 
