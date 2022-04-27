@@ -72,8 +72,6 @@ export default function RootNavigator() {
                                         } else if (route.name === 'Settings') {
                                                 iconName = focused ? 'ios-list-box' : 'ios-list';
                                         }
-
-                                        // You can return any component that you like here!
                                         return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
                                 },
                         })}
