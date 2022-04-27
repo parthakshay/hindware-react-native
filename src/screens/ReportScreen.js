@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
-import StateList from '../components/Picker/StateList';
+import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, } from 'react-native';
 
 const ReportScreen = ({ route, navigation }) => {
         return (
@@ -8,12 +7,9 @@ const ReportScreen = ({ route, navigation }) => {
                         <ScrollView>
                                 <View style={styles.container}>
                                         <View>
-                                                <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', }}>
-                                                        <StateList />
-                                                </View>
                                                 <Pressable
                                                         style={styles.buttonStyle}
-                                                        onPress={() => navigation.navigate('Login')}>
+                                                        onPress={() => navigation.navigate('Dealer')}>
                                                         <Text style={styles.buttonTextStyle}>Submit</Text>
                                                 </Pressable>
                                         </View>

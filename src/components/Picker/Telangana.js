@@ -12,29 +12,29 @@ const App = () => {
                 onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
             >
                 <Picker.Item label="Select District" value="Select" />
-                <Picker.Item label="Nalgonda" value="TS" />
-                <Picker.Item label="Karimnagar" value="TS" />
-                <Picker.Item label="Nizamabad" value="TS" />
-                <Picker.Item label="Medak" value="TS" />
-                <Picker.Item label="Adilabad" value="TS" />
-                <Picker.Item label="Khammam" value="TS" />
-                <Picker.Item label="Warangal" value="TS" />
-                <Picker.Item label="Hyderabad" value="TS" />
-                <Picker.Item label="Ranga Reddy" value="TS" />
-                <Picker.Item label="Mahabubnagar" value="TS" />
-                <Picker.Item label="Siddipet" value="TS" />
-                <Picker.Item label="Sangareddy" value="TS" />
-                <Picker.Item label="Mahabubabad" value="TS" />
-                <Picker.Item label="Nagarkurnool" value="TS" />
-                <Picker.Item label="Yadadri Bhuvanagiri" value="TS" />
-                <Picker.Item label="Mancherial" value="TS" />
-                <Picker.Item label="Nirmal" value="TS" />
-                <Picker.Item label="Jangaon" value="TS" />
-                <Picker.Item label="Suryapet" value="TS" />
-                <Picker.Item label="Jagtial" value="TS" />
-                <Picker.Item label="Jogulamba Gadwal District" value="TS" />
-                <Picker.Item label="Peddapalli" value="TS" />
-                <Picker.Item label="Bhadradri Kothagudem District" value="TS" />
+                <Picker.Item label="Nalgonda" value="Nalgonda" />
+                <Picker.Item label="Karimnagar" value="Karimnagar" />
+                <Picker.Item label="Nizamabad" value="Nizamabad" />
+                <Picker.Item label="Medak" value="Medak" />
+                <Picker.Item label="Adilabad" value="Adilabad" />
+                <Picker.Item label="Khammam" value="Khammam" />
+                <Picker.Item label="Warangal" value="Warangal" />
+                <Picker.Item label="Hyderabad" value="Hyderabad" />
+                <Picker.Item label="Ranga Reddy" value="Ranga Reddy" />
+                <Picker.Item label="Mahabubnagar" value="Mahabubnagar" />
+                <Picker.Item label="Siddipet" value="Siddipet" />
+                <Picker.Item label="Sangareddy" value="Sangareddy" />
+                <Picker.Item label="Mahabubabad" value="Mahabubabad" />
+                <Picker.Item label="Nagarkurnool" value="Nagarkurnool" />
+                <Picker.Item label="Yadadri Bhuvanagiri" value="Yadadri Bhuvanagiri" />
+                <Picker.Item label="Mancherial" value="Mancherial" />
+                <Picker.Item label="Nirmal" value="Nirmal" />
+                <Picker.Item label="Jangaon" value="Jangaon" />
+                <Picker.Item label="Suryapet" value="Suryapet" />
+                <Picker.Item label="Jagtial" value="Jagtial" />
+                <Picker.Item label="Jogulamba Gadwal District" value="Jogulamba Gadwal District" />
+                <Picker.Item label="Peddapalli" value="Peddapalli" />
+                <Picker.Item label="Bhadradri Kothagudem District" value="Bhadradri Kothagudem District" />
             </Picker>
         </View>
     );

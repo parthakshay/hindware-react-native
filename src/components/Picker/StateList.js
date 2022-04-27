@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import { StyleSheet, View } from 'react-native';
 
+
 const App = () => {
     const [selectedValue, setSelectedValue] = useState("Select Area");
     return (
