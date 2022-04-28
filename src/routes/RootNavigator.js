@@ -15,6 +15,7 @@ import SettingScreen from '../screens/SettingsScreen';
 import AccountScreen from '../screens/AccountScreen';
 import DealerScreen from '../screens/DealerScreen';
 import NewEmpScreen from '../screens/NewEmpScreen';
+import EmployeeScreen from '../screens/EmployeeScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,9 +31,12 @@ const LoginStack = () => {
 
 const HomeStack = () => {
         return (
-                <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+                        <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="Home" component={HomeScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
+                        <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        <Stack.Screen name="Report" component={ReportScreen} />
                 </Stack.Navigator>
         );
 };
@@ -45,6 +49,8 @@ function SettingsStack() {
                                 headerShown: false,
                         }}>
                         <Stack.Screen name="Settings" component={SettingScreen} />
+                        <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Account" component={AccountScreen} />
                 </Stack.Navigator>
         );
@@ -58,7 +64,8 @@ function TransactionStack() {
                         }}>
                         <Stack.Screen name="Report" component={ReportScreen} />
                         <Stack.Screen name="Dealer" component={DealerScreen} />
-                        <Stack.Screen name="NewEmp" component={NewEmpScreen} />
+                        <Stack.Screen name="NewEmp" component={NewEmpScreen} />\
+                        <Stack.Screen name="Employee" component={EmployeeScreen} />
                 </Stack.Navigator>
         );
 };
@@ -74,24 +81,20 @@ export default function RootNavigator() {
                                         activeTintColor: 'tomato',
                                         inactiveTintColor: 'gray',
                                 }}>
-                                <Tab.Screen name="LoginStack" component={LoginStack}
-                                        options={{
-                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Login', tabBarShowLabel: false,
-                                        }} />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
                                         options={{
-                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<FontAwesome name="align-left" size={25} color="#444" />),
+                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<FontAwesome name="home" size={25} color="#444" />),
                                         }} />
-                                <Tab.Screen name="SettingsStack" component={SettingsStack} options={{
-                                        headerShown: false, tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
-                                                <FontAwesome name="cog" size={25} color="#444" />),
-                                }} />
                                 <Tab.Screen name="Transactions"
                                         component={TransactionStack}
                                         options={{
                                                 headerShown: false, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
                                                         <FontAwesome name="file-invoice-dollar" size={25} color="#444" />),
                                         }} />
+                                <Tab.Screen name="SettingsStack" component={SettingsStack} options={{
+                                        headerShown: false, tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (
+                                                <FontAwesome name="cog" size={25} color="#444" />),
+                                }} />
                         </Tab.Navigator>
                 </NavigationContainer>
         );

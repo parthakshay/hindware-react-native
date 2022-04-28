@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
-import Datepicker from '../components/DatePicker';
 
 const NewEmpScreen = ({ navigation }) => {
     return (
@@ -56,8 +55,8 @@ const NewEmpScreen = ({ navigation }) => {
                     <View>
                         <Pressable
                             style={styles.buttonStyle}
-                            onPress={() => navigation.navigate('Home')}>
-                            <Text style={styles.buttonTextStyle}>Sign In</Text>
+                            onPress={() => navigation.navigate('Employee')}>
+                            <Text style={styles.buttonTextStyle}>Submit</Text>
                         </Pressable>
                     </View>
                 </View>

@@ -1,43 +1,27 @@
 import React, { Component } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 
 export default class LoginScreen extends Component {
-        constructor() {
-                super();
+        constructor(props) {
+                super(props);
                 this.state = {
                         username: '',
-                        usernameValidate: true,
                         password: '',
-                        passwordValidate: true,
                 }
         }
-        validate(text, type) {
-                if (type == 'username') {
-                        const alph = /^[a-zA-Z]+$/
-                        if (alph.test(text)) {
-                                this.setState({
-                                        usernameValidate: true,
-                                })
-                        }
-                        else {
-                                this.setState({
-                                        usernameValidate: false,
-                                })
-                        }
+        validate = () => {
+                const { username, password } = this.state
+                if (username == 'parth' && password == 'parth@123') {
+                        this.props.navigation.navigate('Home')
+                        return true
+                } else {
+                        this.props.navigation.navigate('Login')
+                        return false
                 }
-                else if (type == 'password') {
-                        const alpha = /^[a-zA-Z]+[0-9]$/
-                        if (alpha.test(text)) {
-                                this.setState({
-                                        passwordValidate: true,
-                                })
-                        }
-                        else {
-                                this.setState({
-                                        passwordValidate: false,
-                                })
-                        }
+        }
+
+        making_api_call = () => {
+                if (this.validate()) {
                 }
         }
 
@@ -61,18 +45,19 @@ export default class LoginScreen extends Component {
                                                                 alignItems: 'center',
                                                         }}>
                                                                 <TextInput
-                                                                        style={[styles.labelTextbox, !this.state.usernameValidate ? styles.error : null]}
+                                                                        style={styles.labelTextbox}
                                                                         placeholder="Username"
                                                                         keyboardType="default"
-                                                                        onChangeText={(text) => this.validate(text, 'username')}
+                                                                        onChangeText={(value) => this.setState({ username: value })}
                                                                 />
                                                                 <TextInput
                                                                         secureTextEntry={true}
-                                                                        style={[styles.labelTextbox, !this.state.usernameValidate ? styles.error : null]} returnKeyType='go'
+                                                                        style={styles.labelTextbox}
+                                                                        returnKeyType='go'
                                                                         autoCorrect={false}
                                                                         placeholder="Password"
                                                                         keyboardType="default"
-                                                                        onChangeText={(text) => this.validate(text, 'password')}
+                                                                        onChangeText={(value) => this.setState({ password: value })}
                                                                 />
                                                         </View>
                                                         <Text style={{
@@ -87,7 +72,7 @@ export default class LoginScreen extends Component {
                                                         <View>
                                                                 <Pressable
                                                                         style={styles.buttonStyle}
-                                                                        onPress={() => navigation.navigate('Home')}>
+                                                                        onPress={() => this.making_api_call()}>
                                                                         <Text style={styles.buttonTextStyle}>Sign In</Text>
                                                                 </Pressable>
                                                         </View>

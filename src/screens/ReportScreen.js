@@ -9,7 +9,7 @@ const ReportScreen = ({ route, navigation }) => {
                                         <View>
                                                 <Pressable
                                                         style={styles.buttonStyle}
-                                                        onPress={() => navigation.navigate('Dealer')}>
+                                                        onPress={() => navigation.navigate('NewEmp')}>
                                                         <Text style={styles.buttonTextStyle}>Submit</Text>
                                                 </Pressable>
                                         </View>

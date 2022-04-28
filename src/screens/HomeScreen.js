@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }) => {
       <Text style={styles.title}>Home Screen</Text>
       <Pressable
         style={styles.buttonStyle}
-        onPress={() => navigation.navigate('NewEmp')}>
+        onPress={() => navigation.navigate('Report')}>
         <Text style={styles.buttonTextStyle}>Go To Report Screen</Text>
       </Pressable>
 
