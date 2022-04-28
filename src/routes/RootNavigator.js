@@ -19,10 +19,18 @@ import NewEmpScreen from '../screens/NewEmpScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const HomeStack = () => {
+const LoginStack = () => {
         return (
                 <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
                         <Stack.Screen name="Login" component={LoginScreen} />
+                        <Stack.Screen name="Home" component={HomeScreen} />
+                </Stack.Navigator>
+        );
+}
+
+const HomeStack = () => {
+        return (
+                <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
                         <Stack.Screen name="Home" component={HomeScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                 </Stack.Navigator>
@@ -61,25 +69,15 @@ function TransactionStack() {
 export default function RootNavigator() {
         return (
                 <NavigationContainer>
-                        <Tab.Navigator screenOptions={({ route }) => ({
-                                tabBarIcon: ({ focused, color, size }) => {
-                                        let iconName;
-
-                                        if (route.name === 'Feed') {
-                                                iconName = focused
-                                                        ? 'ios-information-circle'
-                                                        : 'ios-information-circle-outline';
-                                        } else if (route.name === 'Settings') {
-                                                iconName = focused ? 'ios-list-box' : 'ios-list';
-                                        }
-                                        return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
-                                },
-                        })}
+                        <Tab.Navigator
                                 tabBarOptions={{
                                         activeTintColor: 'tomato',
                                         inactiveTintColor: 'gray',
-                                }}
-                        >
+                                }}>
+                                <Tab.Screen name="LoginStack" component={LoginStack}
+                                        options={{
+                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Login', tabBarShowLabel: false,
+                                        }} />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
                                         options={{
                                                 tabBarLabel: false, headerShown: false, tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<FontAwesome name="align-left" size={25} color="#444" />),

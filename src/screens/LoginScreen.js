@@ -1,62 +1,106 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 
-const LoginScreen = ({ navigation }) => {
-        return (
-                <SafeAreaView>
-                        <ScrollView>
-                                <View style={styles.container}>
-                                        <Image
-                                                source={require("../assets/logo.png")}
-                                                resizeMode="contain"
-                                                style={styles.image}
-                                        ></Image>
-                                        <View >
-                                                <Text style={styles.login}>Login{'\n'}</Text>
-                                                <Text style={styles.loremIpsum}>
-                                                        Welcome back,{"\n"}Sign in to continue Hindware
-                                                </Text>
-                                                <View style={{
-                                                        alignSelf: 'center', alignContent: 'center',
-                                                        alignItems: 'center',
-                                                }}>
-                                                        <TextInput
-                                                                style={styles.labelTextbox}
-                                                                placeholder="Email"
-                                                                keyboardType="email-address"
-                                                        ></TextInput>
-                                                        <TextInput
-                                                                secureTextEntry={true}
-                                                                style={styles.labelTextbox}
-                                                                returnKeyType='go'
-                                                                autoCorrect={false}
-                                                                placeholder="Password"
-                                                                keyboardType="default"
-                                                        ></TextInput></View>
-                                                <Text style={{
-                                                        color: '#51a4ff',
-                                                        fontSize: 15, fontWeight: '900', flex: 1, alignSelf: 'flex-end', marginRight: 30
-                                                }}
-                                                        onPress={() => Linking.openURL('http://google.com')}>
-                                                        Forgot password?
-                                                </Text>
+export default class LoginScreen extends Component {
+        constructor() {
+                super();
+                this.state = {
+                        username: '',
+                        usernameValidate: true,
+                        password: '',
+                        passwordValidate: true,
+                }
+        }
+        validate(text, type) {
+                if (type == 'username') {
+                        const alph = /^[a-zA-Z]+$/
+                        if (alph.test(text)) {
+                                this.setState({
+                                        usernameValidate: true,
+                                })
+                        }
+                        else {
+                                this.setState({
+                                        usernameValidate: false,
+                                })
+                        }
+                }
+                else if (type == 'password') {
+                        const alpha = /^[a-zA-Z]+[0-9]$/
+                        if (alpha.test(text)) {
+                                this.setState({
+                                        passwordValidate: true,
+                                })
+                        }
+                        else {
+                                this.setState({
+                                        passwordValidate: false,
+                                })
+                        }
+                }
+        }
+
+        render() {
+                return (
+                        <SafeAreaView>
+                                <ScrollView>
+                                        <View style={styles.container}>
+                                                <Image
+                                                        source={require("../assets/logo.png")}
+                                                        resizeMode="contain"
+                                                        style={styles.image}
+                                                ></Image>
+                                                <View >
+                                                        <Text style={styles.login}>Login{'\n'}</Text>
+                                                        <Text style={styles.loremIpsum}>
+                                                                Welcome back,{"\n"}Sign in to continue Hindware
+                                                        </Text>
+                                                        <View style={{
+                                                                alignSelf: 'center', alignContent: 'center',
+                                                                alignItems: 'center',
+                                                        }}>
+                                                                <TextInput
+                                                                        style={[styles.labelTextbox, !this.state.usernameValidate ? styles.error : null]}
+                                                                        placeholder="Username"
+                                                                        keyboardType="default"
+                                                                        onChangeText={(text) => this.validate(text, 'username')}
+                                                                />
+                                                                <TextInput
+                                                                        secureTextEntry={true}
+                                                                        style={[styles.labelTextbox, !this.state.usernameValidate ? styles.error : null]} returnKeyType='go'
+                                                                        autoCorrect={false}
+                                                                        placeholder="Password"
+                                                                        keyboardType="default"
+                                                                        onChangeText={(text) => this.validate(text, 'password')}
+                                                                />
+                                                        </View>
+                                                        <Text style={{
+                                                                color: '#51a4ff',
+                                                                fontSize: 15, fontWeight: '900', flex: 1, alignSelf: 'flex-end', marginRight: 30
+                                                        }}
+                                                                onPress={() => Linking.openURL('http://google.com')}>
+                                                                Forgot password?
+                                                        </Text>
 
 
-                                                <View>
-                                                        <Pressable
-                                                                style={styles.buttonStyle}
-                                                                onPress={() => navigation.navigate('Home')}>
-                                                                <Text style={styles.buttonTextStyle}>Sign In</Text>
-                                                        </Pressable>
+                                                        <View>
+                                                                <Pressable
+                                                                        style={styles.buttonStyle}
+                                                                        onPress={() => navigation.navigate('Home')}>
+                                                                        <Text style={styles.buttonTextStyle}>Sign In</Text>
+                                                                </Pressable>
+                                                        </View>
                                                 </View>
                                         </View>
-                                </View>
-                        </ScrollView>
-                </SafeAreaView>
+                                </ScrollView>
+                        </SafeAreaView >
 
-        );
+                );
+
+        }
+
 }
-
 const styles = StyleSheet.create({
         container: {
                 flex: 1
@@ -111,6 +155,15 @@ const styles = StyleSheet.create({
                 marginTop: 30,
                 fontSize: 19
         },
+        inputLayout: {
+                paddingBottom: 20,
+        },
+        textDanger: {
+                color: "#dc3545"
+        },
+        error: {
+                borderWidth: 3,
+                borderColor: 'red',
+        },
 });
 
-export default LoginScreen;
