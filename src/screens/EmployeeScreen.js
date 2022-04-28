@@ -1,8 +1,9 @@
 import React from "react";
-import { View, SafeAreaView, StatusBar, Pressable, StyleSheet, Text } from 'react-native';
+import { View, SafeAreaView, Pressable, StyleSheet, Text } from 'react-native';
 import { Divider } from "react-native-paper";
-import GetDate from '../components/GetDate';
+import ReportDate from '../components/ReportDate';
 import { ScrollView } from "react-native";
+import GetDate from "../components/GetDate";
 
 const EmployeeScreen = ({ navigation }) => {
     return (
@@ -12,22 +13,21 @@ const EmployeeScreen = ({ navigation }) => {
                     <View>
                         <Text style={styles.login}> Details </Text>
                     </View>
-                    <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', }}>
+                    <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', marginTop: 10 }}>
                         <Text>Rohit Reddy</Text>
                         <Divider />
                         <Text>Zonal Manager</Text>
                         <Divider />
-                        <GetDate />
+                        <Text><ReportDate /></Text>
                         <Divider />
                         <Text>Andhra Pradesh</Text>
                         <Divider />
+                        <Text><GetDate /></Text>
                     </View>
                     <View style={{ backgroundColor: '#f3f3f3' }}>
                         <View>
                             <View>
-                                <Text>
-                                    ASM
-                                </Text>
+                                <Text>ASM</Text>
                             </View>
                         </View>
                         <Pressable
@@ -39,7 +39,6 @@ const EmployeeScreen = ({ navigation }) => {
                 </View>
             </ScrollView>
         </SafeAreaView >
-
     );
 };
 const styles = StyleSheet.create({

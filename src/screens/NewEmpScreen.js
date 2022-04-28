@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
+import DatePicker from '../components/DatePicker'
 
 const NewEmpScreen = ({ navigation }) => {
     return (
@@ -19,11 +20,9 @@ const NewEmpScreen = ({ navigation }) => {
                                 placeholder="Designation"
                                 keyboardType="default"
                             ></TextInput>
-                            <TextInput
-                                style={styles.labelTextbox}
-                                placeholder="DOJ"
-                                keyboardType="default"
-                            ></TextInput>
+
+                            <DatePicker />
+
                             <TextInput
                                 style={styles.labelTextbox}
                                 placeholder="City"
