@@ -16,8 +16,7 @@ const AccountScreen = ({ navigation }) => {
                         <View style={{
                             alignSelf: 'center', marginTop: 40, marginHorizontal: 20, justifyContent: 'space-around'
                         }}>
-                            <Menu.Item icon="account" onPress={() => { }} title="Profile" />
-                            <Menu.Item icon="headphones" onPress={() => { }} title="Help" />
+                            <Menu.Item icon="key" onPress={() => { }} title="Change Password" />
                             <Menu.Item icon="logout" onPress={() => navigation.navigate('Login')} title="Logout" />
                         </View>
                         <View>

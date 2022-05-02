@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, SafeAreaView, ScrollView, } from 'react-native';
-import { Menu, Searchbar, Divider } from 'react-native-paper';
+import { Menu, Divider } from 'react-native-paper';
 
 const SettingsScreen = ({ navigation }) => {
     return (
@@ -9,22 +9,12 @@ const SettingsScreen = ({ navigation }) => {
                 <View style={styles.container}>
                     <View >
                         <Text style={styles.login}>Settings{'\n'}</Text>
-
-                        <View>
-                            <Searchbar style={{ marginLeft: 30, marginRight: 30, }} />
-                        </View>
                         <View style={{
                             alignSelf: 'center', marginTop: 40,
                         }}>
                             <Menu.Item icon="account" onPress={() => navigation.navigate('Account')} title="Account" />
                             <Divider />
-                            <Menu.Item icon="eye-outline" onPress={() => { }} title="Appearance" />
-                            <Divider />
                             <Menu.Item icon="lock-outline" onPress={() => { }} title="Security" />
-                            <Divider />
-                            <Menu.Item icon="headphones" onPress={() => { }} title="Help" />
-                            <Divider />
-                            <Menu.Item icon="comment-question-outline" onPress={() => { }} title="About" />
                             <Divider />
                         </View>
                         <View>

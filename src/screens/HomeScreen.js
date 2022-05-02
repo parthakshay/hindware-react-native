@@ -1,20 +1,30 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, ScrollView, SafeAreaView } from 'react-native';
+import DataTable from '../components/EmpDataTable'
 
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.screenContainer}>
-      <Image style={styles.tinyLogo} source={require('../assets/logo.png')} />
-      <Text style={styles.title}>Home Screen</Text>
-      <Pressable
-        style={styles.buttonStyle}
-        onPress={() => navigation.navigate('NewEmp')}>
-        <Text style={styles.buttonTextStyle}>Go To Report Screen</Text>
-      </Pressable>
-
-    </View>
-
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.screenContainer}>
+          <View>
+            <Image style={styles.tinyLogo} source={require('../assets/logo.png')} />
+            <Text style={styles.title}>Home Screen</Text>
+          </View>
+          <View>
+            <DataTable />
+          </View>
+          <View>
+            <Pressable
+              style={styles.buttonStyle}
+              onPress={() => navigation.navigate('NewEmp')}>
+              <Text style={styles.buttonTextStyle}>Go To Report Screen</Text>
+            </Pressable>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -35,7 +45,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ababab',
+    backgroundColor: '#000',
     shadowRadius: 5,
     shadowOpacity: 0.7,
     shadowOffset: {
@@ -48,14 +58,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   tinyLogo: {
-    width: '100%',
+    width: 150,
     resizeMode: "contain",
-  },
-  logo: {
-    flex: 2,
-    marginTop: 1,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
   },
 });
 
