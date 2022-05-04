@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking, Alert } from 'react-native';
 import Style from '../components/Style';
-import { useNavigation } from '@react-navigation/native';
 const styles = StyleSheet.create(Style)
-const navigation = useNavigation();
 
 export default class LoginScreen extends Component {
         constructor(props) {
@@ -21,9 +19,9 @@ export default class LoginScreen extends Component {
                 } else {
                         Alert.alert(  
                                 'Wrong Credentials!',  
-                                'Please check the username and password for a smooth login!😉',  
+                                'Please check the username and password for a smooth login.😉',  
                                 [    
-                                    {text: 'Dismiss', onPress: () => console.log('OK Pressed')},  
+                                    {text: 'Dismiss', onPress: () => console.log('')},  
                                 ]  
                             );
                 }
@@ -69,7 +67,7 @@ export default class LoginScreen extends Component {
                                                                 color: '#51a4ff',
                                                                 fontSize: 15, fontWeight: '900', flex: 1, alignSelf: 'flex-end', marginRight: 30
                                                         }}
-                                                        onPress={() => navigation.navigate("ResetPasswordScreen")}>
+                                                                onPress={() => Linking.openURL('http://google.com')}>
                                                                 Forgot password?
                                                         </Text>
 
