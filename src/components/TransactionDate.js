@@ -52,7 +52,6 @@ const TransactionDate = () => {
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        alignItems: 'center',
     },
     title: {
         textAlign: 'left',
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     datePickerStyle: {
-        width: 230,
+        width: '100%',
     },
     text: {
         textAlign: 'left',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
-import DatePicker from '../components/DatePicker'
+import DatePicker from '../components/DatePicker';
 import Style from '../components/Style';
 const styles = StyleSheet.create(Style)
 
@@ -47,14 +47,14 @@ const NewEmpScreen = ({ navigation }) => {
                             ></TextInput>
                         </View>
                     </KeyboardAvoidingView>
-                    <View style={{ height: 60 }} />
+
                     <View>
                         <Pressable
                             style={styles.buttonStyle}
                             onPress={() => navigation.navigate('Employee')}>
                             <Text style={styles.buttonTextStyle}>Submit</Text>
                         </Pressable>
-                    </View>
+                        </View>
                 </View>
             </ScrollView>
         </SafeAreaView >

@@ -28,9 +28,6 @@ const LoginStack = () => {
                 <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
                         <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="Home" component={HomeScreen} />
-                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
-                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 }
@@ -39,11 +36,10 @@ const HomeStack = () => {
         return (
                 <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
                         <Stack.Screen name="Home" component={HomeScreen} />
+                        <Stack.Screen name="Login" component={LoginScreen}/>
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Employee" component={EmployeeScreen} />
                         <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
-                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
@@ -56,7 +52,6 @@ function SettingsStack() {
                                 headerShown: false,
                         }}>
                         <Stack.Screen name="Settings" component={SettingScreen} />
-                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
                         <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
                         <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
@@ -72,9 +67,6 @@ function TransactionStack() {
                         <Stack.Screen name="Report" component={ReportScreen} />
                         <Stack.Screen name="Dealer" component={DealerScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
-                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
-                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
@@ -94,9 +86,7 @@ export default function RootNavigator() {
                                         options={{
                                                 tabBarLabel: false, headerShown: false,
                                                 tabBarShowLabel: false, 
-                                                tabBarActiveTintColor: '#f3f3f3',
-                                                tabBarInactiveTintColor: '#4f4f4f',
-                                                tabBarHideOnKeyboard: true,                                        }} />
+                                        }} />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
                                         options={{
                                                 tabBarLabel: false, headerShown: false, tabBarLabel: 'Home',

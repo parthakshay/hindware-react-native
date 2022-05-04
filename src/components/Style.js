@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default StyleSheet.create({
     
 buttonStyle: {
-        alignSelf: 'center', alignContent: 'center',
-        alignItems: 'center',
+        alignContent: 'center',
+        alignSelf:'center',
         height: 60,
-        width: '80%',
+        width: '60%',
         marginTop: 160,
         borderRadius: 15,
         alignItems: 'center',
@@ -22,12 +23,10 @@ buttonStyle: {
 },
 container: {
     flex: 1,
-    marginTop: 20
+    
 },
 screenContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#fff',
   },
 image: {
@@ -47,9 +46,9 @@ loremIpsum: {
     color: '#b5b5b5',
     fontSize: 20,
     marginLeft: 30,
-    fontWeight: '900',
-    marginBottom: 20
-
+    fontWeight: '400',
+    marginBottom: 20,
+    marginRight:30,
 },
   title: {
     fontSize: 32,
@@ -65,7 +64,8 @@ loremIpsum: {
   plusButtonStyle: {
     height: 54,
     width: 54,
-    marginTop: 32,
+    marginTop: 250,
+    marginLeft: 270,
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -79,8 +79,12 @@ loremIpsum: {
   },
   plusButtonTextStyle: {
     color: '#f0ebee',
-    fontWeight: '700',
+    fontWeight: '900',
     fontSize: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center', 
+    alignContent: 'center',
   },
   labelTextbox: {
     height: 50,
@@ -107,7 +111,17 @@ input: {
     borderWidth: 1,
     padding: 10,
 },
-
-
+plusButton: {
+    marginTop: 30,
+    marginLeft:30,
+},
+report:{
+    color: '#b5b5b5',
+    fontSize: 20,
+    marginLeft: 30,
+    fontWeight: '400',
+    marginBottom: 20,
+    marginRight:30,
+},
 
 });

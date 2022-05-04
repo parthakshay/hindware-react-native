@@ -4,7 +4,7 @@ import { KeyboardAvoidingView } from 'react-native';
 import TransactionDate from '../components/TransactionDate'
 import Style from '../components/Style'
 
-const TransactionFormScreen = ({ navigation }) => {
+const TransactionForm = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView>
@@ -50,4 +50,4 @@ const TransactionFormScreen = ({ navigation }) => {
 const styles = StyleSheet.create(Style)
 
 
-export default TransactionFormScreen;
+export default TransactionForm;

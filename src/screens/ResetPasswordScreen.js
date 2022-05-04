@@ -11,7 +11,7 @@ const ResetPasswordScreen = ({ navigation }) => {
                                         <View style={styles.container}>
                                                 <View >
                                                         <Text style={styles.login}>Reset Password</Text>
-                                                        <Text style={styles.loremIpsum}>Enter the phone number associated with your account and we will send a code on your phone number.</Text>
+                                                        <Text style={styles.report}>Enter the email address associated with your account and we will send an OTP on it.</Text>
                                                         <View style={{
                                                                 alignSelf: 'center', alignContent: 'center',
                                                                 alignItems: 'center',}}>
