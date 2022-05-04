@@ -11,10 +11,13 @@ import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ReportScreen from '../screens/ReportScreen';
 import SettingScreen from '../screens/SettingsScreen';
-import AccountScreen from '../screens/AccountScreen';
 import DealerScreen from '../screens/DealerScreen';
 import NewEmpScreen from '../screens/NewEmpScreen';
 import EmployeeScreen from '../screens/EmployeeScreen';
+import TransactionFormScreen from '../screens/TransactionFormScreen';
+import ResetPasswordScreen from '../screens/ResetPasswordScreen';
+import PasswordOtpScreen from '../screens/PasswordOtpScreen';
+
 
 
 const Stack = createStackNavigator();
@@ -22,9 +25,12 @@ const Tab = createBottomTabNavigator();
 
 const LoginStack = () => {
         return (
-                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
                         <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="Home" component={HomeScreen} />
+                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
+                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 }
@@ -35,6 +41,9 @@ const HomeStack = () => {
                         <Stack.Screen name="Home" component={HomeScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
+                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
@@ -47,7 +56,9 @@ function SettingsStack() {
                                 headerShown: false,
                         }}>
                         <Stack.Screen name="Settings" component={SettingScreen} />
-                        <Stack.Screen name="Account" component={AccountScreen} />
+                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
+                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
@@ -61,6 +72,9 @@ function TransactionStack() {
                         <Stack.Screen name="Report" component={ReportScreen} />
                         <Stack.Screen name="Dealer" component={DealerScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
+                        <Stack.Screen name="TransactionForm" component={TransactionFormScreen} />
+                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
@@ -78,11 +92,11 @@ export default function RootNavigator() {
                                 }}>
                                 <Tab.Screen name="LoginStack" component={LoginStack}
                                         options={{
-                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Login',
-                                                tabBarHideOnKeyboard: true,
-                                                tabBarShowLabel: false, tabBarActiveTintColor: '#f3f3f3',
-                                                tabBarInactiveTintColor: '#4f4f4f'
-                                        }} />
+                                                tabBarLabel: false, headerShown: false,
+                                                tabBarShowLabel: false, 
+                                                tabBarActiveTintColor: '#f3f3f3',
+                                                tabBarInactiveTintColor: '#4f4f4f',
+                                                tabBarHideOnKeyboard: true,                                        }} />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
                                         options={{
                                                 tabBarLabel: false, headerShown: false, tabBarLabel: 'Home',

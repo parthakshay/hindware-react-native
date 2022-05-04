@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View, SafeAreaView, StatusBar, Pressable, StyleSheet, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Avatar, Card, } from 'react-native-paper';
+import Style from '../components/Style';
+const styles = StyleSheet.create(Style)
 
 const DealerScreen = ({ navigation }) => (
     <SafeAreaView>
@@ -38,26 +40,6 @@ const DealerScreen = ({ navigation }) => (
     </SafeAreaView>
 );
 
-const styles = StyleSheet.create({
-    buttonStyle: {
-        height: 54,
-        width: '80%',
-        marginTop: 32,
-        borderRadius: 8,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#ababab',
-        shadowRadius: 5,
-        shadowOpacity: 0.7,
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-    },
-    buttonTextStyle: {
-        color: '#f0ebee',
-        fontWeight: '700',
-    },
-});
+
 
 export default DealerScreen;
