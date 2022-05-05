@@ -78,7 +78,7 @@ export default function RootNavigator() {
         return (
                 <NavigationContainer>
                         <Tab.Navigator
-                                tabBarOptions={{
+                                screenOptions={{
                                         activeTintColor: 'tomato',
                                         inactiveTintColor: 'gray',
                                 }}>
