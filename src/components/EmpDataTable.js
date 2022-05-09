@@ -6,12 +6,13 @@ export default class EmpDataTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: ['Head', 'Head2', 'Head3', 'Head4'],
+      tableHead: ['ID', 'Name', 'Zone', 'District', 'Sales'],
       tableData: [
-        ['1', '2', '3', '4'],
-        ['a', 'b', 'c', 'd'],
-        ['1', '2', '3', '4'],
-        ['a', 'b', 'c', 'd']
+        ['1', '2', '3', '4','5'],
+        ['a', 'b', 'c', 'd','e'],
+        ['1', '2', '3', '4','5'],
+        ['a', 'b', 'c', 'd','e'],
+        ['1', '2', '3', '4','5'],
       ]
     }
   }
@@ -25,7 +26,7 @@ export default class EmpDataTable extends Component {
     const element = (data, index) => (
       <TouchableOpacity onPress={() => this._alertIndex(index)}>
         <View style={styles.btn}>
-          <Text style={styles.btnText}>button</Text>
+          <Text style={styles.btnText}>Record</Text>
         </View>
       </TouchableOpacity>
     );
@@ -39,7 +40,7 @@ export default class EmpDataTable extends Component {
               <TableWrapper key={index} style={styles.row}>
                 {
                   rowData.map((cellData, cellIndex) => (
-                    <Cell key={cellIndex} data={cellIndex === 3 ? element(cellData, index) : cellData} textStyle={styles.text}/>
+                    <Cell key={cellIndex} data={cellIndex === 4 ? element(cellData, index) : cellData} textStyle={styles.text}/>
                   ))
                 }
               </TableWrapper>

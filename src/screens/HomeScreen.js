@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
             <Image style={styles.tinyLogo} source={require('../assets/logo.png')} />
             <Text style={styles.title}>Home Screen</Text>
           </View>
-          <View style={{height: 100, width:'80%'}}>
+          <View style={{height: 200, width:'100%'}}>
             <EmpDataTable/>
           </View>
           <View style={styles.plusButton}>
