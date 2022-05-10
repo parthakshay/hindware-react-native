@@ -1,8 +1,9 @@
 import React from 'react';
-
 import { View, Text, StyleSheet, Pressable, SafeAreaView, ScrollView, } from 'react-native';
 import { Menu, Divider } from 'react-native-paper';
 import Style from '../components/Style';
+import HeadBar from '../components/HeadBar';
+import colors from '../theme/colors';
 const styles = StyleSheet.create(Style)
 
 const SettingsScreen = ({ navigation }) => {
@@ -11,15 +12,14 @@ const SettingsScreen = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container} >
-                    <View >
-                        <Text style={styles.login}>Settings{'\n'}</Text>
+                <View><HeadBar /></View>
                         <View style={{
                             alignSelf: 'center', marginTop: 40,
                         }}>
                             <Menu.Item icon="key" onPress={() => navigation.navigate('ResetPassword')} title="Change Password" />
                             <Divider/>
                             <Menu.Item icon="logout" onPress={() => navigation.navigate('Login')} title="Logout" />
-                            <Divider />
+                            
                         </View>
                         <View>
                             <Pressable
@@ -29,7 +29,6 @@ const SettingsScreen = ({ navigation }) => {
                             </Pressable>
                         </View>
                     </View>
-                </View>
             </ScrollView>
         </SafeAreaView>
     );

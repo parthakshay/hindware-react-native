@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { colors } from '../theme/colors';
 
 
 const DatePickerApp = () => {
@@ -28,17 +30,17 @@ const DatePickerApp = () => {
                             marginLeft: 0,
                         },
                         dateInput: {
-                            borderColor: "gray",
+                            borderColor: '#343434',
                             alignItems: "flex-start",
                             borderWidth: 0,
-                            borderBottomWidth: 1,
+                            borderBottomWidth: 0.5,
                         },
                         placeholderText: {
-                            fontSize: 17,
-                            color: "gray"
+                            fontSize: 20,
+                            color: '#a1a1a1'
                         },
                         dateText: {
-                            fontSize: 17,
+                            fontSize: 20,
                         }
                     }}
                     onDateChange={(date) => {
@@ -63,12 +65,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     datePickerStyle: {
-        width: 230,
+        width: 250,
     },
     text: {
         textAlign: 'left',
         width: 230,
         fontSize: 16,
-        color: "#a4a4a4"
+        color: '#343434'
     }
 })

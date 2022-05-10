@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
+import { colors } from '../theme/colors';
 
 export default class EmpDataTable extends Component {
   constructor(props) {
@@ -53,10 +54,10 @@ export default class EmpDataTable extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-  head: { height: 40, backgroundColor: '#808B97' },
+  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fefefe' },
+  head: { height: 40, backgroundColor: '#a1a1a1' },
   text: { margin: 6 },
-  row: { flexDirection: 'row', backgroundColor: '#FFF1C1' },
-  btn: { width: 58, height: 18, backgroundColor: '#78B7BB',  borderRadius: 2 },
-  btnText: { textAlign: 'center', color: '#fff' }
+  row: { flexDirection: 'row', backgroundColor: '#fff1c1' },
+  btn: { width: 58, height: 18, backgroundColor: '#ea4f5a',  borderRadius: 2 },
+  btnText: { textAlign: 'center', color: '#fefefe' }
 });

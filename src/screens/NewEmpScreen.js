@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 import DatePicker from '../components/DatePicker';
+import HeadBar from '../components/HeadBar';
 import Style from '../components/Style';
+import colors from '../theme/colors';
 const styles = StyleSheet.create(Style)
 
 const NewEmpScreen = ({ navigation }) => {
@@ -10,21 +12,23 @@ const NewEmpScreen = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container}>
+                    <View><HeadBar/></View>
                     <KeyboardAvoidingView>
+                    
                         <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', }}>
                             <TextInput
                                 style={styles.labelTextbox}
                                 placeholder="Name"
                                 keyboardType="default"
                             ></TextInput>
-                            
-                            <DatePicker />
 
+                            <View><DatePicker /></View>
+                            
                             <TextInput
                                 style={styles.labelTextbox}
                                 placeholder="City"
                                 keyboardType="default"
-                            ></TextInput>
+                            />
                             <TextInput
                                 style={styles.labelTextbox}
                                 placeholder="State"

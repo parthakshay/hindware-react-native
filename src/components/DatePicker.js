@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import colors from '../theme/colors'
+
 
 const DatePickerApp = () => {
     const [date, setDate] = useState(new Date());
@@ -22,22 +25,21 @@ const DatePickerApp = () => {
                     customStyles={{
                         dateIcon: {
                             position: 'absolute',
-                            right: -5,
-                            top: 4,
+                            right: 0,
+                            top: 5,
                             marginLeft: 0,
                         },
                         dateInput: {
                             borderColor: "gray",
                             alignItems: "flex-start",
                             borderWidth: 0,
-                            borderBottomWidth: 1,
                         },
                         placeholderText: {
-                            fontSize: 17,
+                            fontSize: 20,
                             color: "gray"
                         },
                         dateText: {
-                            fontSize: 17,
+                            fontSize: 18,
                         }
                     }}
                     onDateChange={(date) => {
@@ -54,20 +56,20 @@ export default DatePickerApp;
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
     },
     title: {
         textAlign: 'left',
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: 'bold',
     },
     datePickerStyle: {
-        width: 230,
+        flex:1,
     },
     text: {
         textAlign: 'left',
-        width: 230,
-        fontSize: 16,
-        color: "#a4a4a4"
+        width: wp('80%'),
+        fontSize: 20,
+        color: "gray"
     }
 })

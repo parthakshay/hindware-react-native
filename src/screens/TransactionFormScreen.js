@@ -1,15 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, SafeAreaView, TextInput, ScrollView, } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
-import TransactionDate from '../components/TransactionDate'
-import Style from '../components/Style'
+import TransactionDate from '../components/TransactionDate';
+import Style from '../components/Style';
+import HeadBar from '../components/HeadBar';
+import colors from '../theme/colors';
 
 const TransactionForm = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView>
+            <KeyboardAvoidingView>
                 <View style={styles.container}>
-                    <KeyboardAvoidingView>
+                    <View><HeadBar/></View>
                         <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', }}>
                             <TextInput
                                 style={styles.labelTextbox}
@@ -29,6 +32,7 @@ const TransactionForm = ({ navigation }) => {
                                 placeholder="Amount"
                                 keyboardType="numeric"
                             ></TextInput>
+
                         </View>
                     
                     <View style={{ height: 60 }} />
@@ -39,9 +43,8 @@ const TransactionForm = ({ navigation }) => {
                             <Text style={styles.buttonTextStyle}>Submit</Text>
                         </Pressable>
                     </View>
-                    </KeyboardAvoidingView>
                 </View>
-                
+                </KeyboardAvoidingView>                
             </ScrollView>
         </SafeAreaView >
 

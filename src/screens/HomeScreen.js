@@ -1,19 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, ScrollView, SafeAreaView } from 'react-native';
 import Style from '../components/Style';
-import EmpDataTable from '../components/EmpDataTable'
+import HomeHeadBar from '../components/HomeHead';
+import colors from '../theme/colors';
 
 const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View style={styles.screenContainer}>
+        <View style={styles.container}>
           <View>
-            <Image style={styles.tinyLogo} source={require('../assets/logo.png')} />
-            <Text style={styles.title}>Home Screen</Text>
+            <HomeHeadBar/>
           </View>
-          <View style={{height: 200, width:'100%'}}>
-            <EmpDataTable/>
+          <View>
+            <Text style={styles.title}>Home Screen</Text>
           </View>
           <View style={styles.plusButton}>
             <Pressable
@@ -22,7 +22,8 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.plusButtonTextStyle}>+</Text>
             </Pressable>
           </View>
-        </View>
+          </View>
+        
       </ScrollView>
       
     </SafeAreaView>

@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking, Alert } from 'react-native';
 import Style from '../components/Style';
+import TextBox from 'react-native-password-eye'; 
+import colors from '../theme/colors';
 const styles = StyleSheet.create(Style)
 
 export default class LoginScreen extends Component {
@@ -32,11 +34,14 @@ export default class LoginScreen extends Component {
                 }
         }
 
+
+
         render() {
                 return (
                         <SafeAreaView>
                                 <ScrollView>
                                         <View style={styles.container}>
+
                                                 <Image
                                                         source={require("../assets/logo.png")}
                                                         resizeMode="contain"
@@ -47,13 +52,14 @@ export default class LoginScreen extends Component {
                                                                 alignSelf: 'center', alignContent: 'center',
                                                                 alignItems: 'center',
                                                         }}>
-                                                                <TextInput
+                                                                <TextBox
                                                                         style={styles.labelTextbox}
                                                                         placeholder="Username"
                                                                         keyboardType="default"
                                                                         onChangeText={(value) => this.setState({ username: value })}
                                                                 />
-                                                                <TextInput
+                                                                
+                                                                <TextBox
                                                                         secureTextEntry={true}
                                                                         style={styles.labelTextbox}
                                                                         returnKeyType='go'
@@ -67,7 +73,7 @@ export default class LoginScreen extends Component {
                                                                 color: '#51a4ff',
                                                                 fontSize: 15, fontWeight: '900', flex: 1, alignSelf: 'flex-end', marginRight: 30
                                                         }}
-                                                                onPress={() => Linking.openURL('http://google.com')}>
+                                                                onPress={() => this.props.navigation.navigate('ResetPassword')}>
                                                                 Forgot password?
                                                         </Text>
 
