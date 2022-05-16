@@ -39,7 +39,7 @@ const HomeStack = () => {
         return (
                 <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
                         <Stack.Screen name="Home" component={HomeScreen} />
-                        <Stack.Screen name="Login" component={LoginScreen}/>
+                        <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Employee" component={EmployeeScreen} />
                 </Stack.Navigator>
@@ -67,7 +67,7 @@ function TransactionStack() {
                                 headerShown: false,
                         }}>
                         <Stack.Screen name="Report" component={ReportScreen} />
-                        <Stack.Screen name="Transactions" component={TransactionFormScreen}/>
+                        <Stack.Screen name="Transactions" component={TransactionFormScreen} />
                 </Stack.Navigator>
         );
 };
@@ -91,7 +91,7 @@ export default function RootNavigator() {
                                                 tabBarHideOnKeyboard: true,
                                                 tabBarShowLabel: false,
                                         }} />
-                
+
                                 <Tab.Screen name="Transactions"
                                         component={TransactionStack}
                                         options={{
@@ -99,7 +99,7 @@ export default function RootNavigator() {
                                                         <FontAwesome name="file-invoice-dollar" size={25} color="#444" />),
                                                 tabBarActiveBackgroundColor: '#fefefe',
                                                 tabBarHideOnKeyboard: true,
-                                                tabBarShowLabel: false,
+                                                tabBarShowLabel: true,
                                         }} />
 
                                 <Tab.Screen name="SettingsStack" component={SettingsStack} options={{
