@@ -18,7 +18,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212427',
+    backgroundColor: '#212427'
   },
   container: {
     flex: 1,
@@ -46,6 +46,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ef3e42',
+  },
+  textDanger: {
+    color: "#dc3545"
   },
   plusButtonTextStyle: {
     color: '#fefefe',
