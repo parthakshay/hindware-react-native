@@ -72,6 +72,7 @@ export default StyleSheet.create({
     fontWeight: '400',
     marginBottom: hp('2.40%'),
     marginRight: wp('7.63%'),
+    marginTop: hp('2.40%')
   },
   headbar: {
     marginTop: hp('6.02%'),

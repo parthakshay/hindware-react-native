@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Pressable, SafeAreaView, TextInput, ScrollView,
 import { KeyboardAvoidingView } from 'react-native';
 import TransactionDate from '../components/TransactionDate';
 import Style from '../components/Style';
-import HeadBar from '../components/HeadBar';
+import TransactionHeader from '../components/TransactionHeader';
 import colors from '../theme/colors';
 
 const TransactionForm = ({ navigation }) => {
@@ -12,7 +12,7 @@ const TransactionForm = ({ navigation }) => {
             <ScrollView>
             <KeyboardAvoidingView>
                 <View style={styles.container}>
-                    <View><HeadBar/></View>
+                    <View><TransactionHeader/></View>
                         <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', }}>
                             <TextInput
                                 style={styles.labelTextbox}

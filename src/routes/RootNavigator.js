@@ -42,6 +42,7 @@ const HomeStack = () => {
                         <Stack.Screen name="Login" component={LoginScreen}/>
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        
                 </Stack.Navigator>
         );
 };
