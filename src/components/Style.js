@@ -5,7 +5,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
-import colors from '../theme/colors'
+import {
+  colors
+} from '../theme/colors';
 
 export default StyleSheet.create({
 
@@ -18,7 +20,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#212427'
+    backgroundColor: colors.black,
   },
   container: {
     flex: 1,
@@ -35,7 +37,7 @@ export default StyleSheet.create({
     marginLeft: wp('7.63%')
   },
   buttonTextStyle: {
-    color: 'white',
+    color: colors.white,
     fontWeight: '500',
     fontSize: hp('2.40%')
   },
@@ -45,13 +47,13 @@ export default StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ef3e42',
+    backgroundColor: colors.red,
   },
   textDanger: {
-    color: "#dc3545"
+    color: colors.paleRed
   },
   plusButtonTextStyle: {
-    color: '#fefefe',
+    color: colors.white,
     fontSize: hp('5%'),
     alignItems: 'center',
     justifyContent: 'center',
@@ -69,7 +71,7 @@ export default StyleSheet.create({
     paddingHorizontal: wp('1.27%'),
   },
   reportScreenText: {
-    color: '#a1a1a1',
+    color: colors.gray,
     fontSize: hp('2.40%'),
     marginLeft: wp('7.63%'),
     fontWeight: '400',
@@ -80,7 +82,7 @@ export default StyleSheet.create({
   headbar: {
     marginTop: hp('6.02%'),
     height: hp('7.22%'),
-    backgroundColor: '#ea4f5a',
+    backgroundColor: colors.paleRed,
   }
 
 });
