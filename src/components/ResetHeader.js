@@ -4,13 +4,17 @@ import Style from '../components/Style';
 import {StyleSheet, View} from 'react-native';
 const styles = StyleSheet.create(Style)
 
-const Headbar = ({navigation}) => {
-  const _goBack = () => navigation.navigate('Settings');
+const Headbar = () => {
+  const _goBack = () => console.log('Went back');
+
+  const _handleSearch = () => console.log('Searching');
+
+  const _handleMore = () => console.log('Shown more');
 
   return (
     <Appbar.Header style={styles.headbar}>
       <Appbar.BackAction onPress={_goBack} />
-      <Appbar.Content title='Settings' onPress={_goBack} />
+      <Appbar.Content title='Reset Password' />
     </Appbar.Header>
   );
 };
