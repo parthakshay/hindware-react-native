@@ -60,14 +60,29 @@ export default StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center'
   },
-  labelTextbox: {
+  labelUsername: {
+    top: 30,
+    borderWidth: 1,
+    borderRadius: 10,
     height: hp('6.02%'),
-    width: wp('76.33%'),
-    marginTop: hp('2.40%'),
-    fontSize: hp('2.40%'),
-    paddingVertical: hp('0.60%'),
-    paddingHorizontal: wp('1.27%'),
+    width: wp('80.33%'),
+    alignItems: 'center',
+    textAlign: 'left',
+    display: 'flex'
+
   },
+  labelTextbox: {
+    top: 30,
+    borderWidth: 1,
+    borderRadius: 10,
+    height: hp('6.02%'),
+    width: wp('80.33%'),
+    textAlign: 'left',
+    alignItems: 'center',
+    display: 'flex'
+
+  },
+
   reportScreenText: {
     color: '#a1a1a1',
     fontSize: hp('2.40%'),
@@ -80,6 +95,9 @@ export default StyleSheet.create({
     marginTop: hp('6.02%'),
     height: hp('7.22%'),
     backgroundColor: '#ea4f5a',
+  },
+  checkbox: {
+    marginVertical: 5,
   }
 
 });

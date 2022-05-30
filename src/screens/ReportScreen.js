@@ -12,10 +12,10 @@ const ReportScreen = ({ route, navigation }) => {
                 <SafeAreaView>
                         <ScrollView>
                                 <View style={styles.container}>
-                        <View><HeadBar/></View>
-                                <View style={{height: 200, width:'100%',}}>
-            <EmpDataTable/>
-          </View>
+                                        <View><HeadBar /></View>
+                                        <View style={{ height: 200, width: '100%', }}>
+                                                <EmpDataTable />
+                                        </View>
                                         <View>
                                                 <Pressable
                                                         style={styles.buttonStyle}

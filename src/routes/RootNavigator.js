@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
 import colors from '../theme/colors';
 
 
-
+import EmpDataTable from '../components/EmpDataTable';
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ReportScreen from '../screens/ReportScreen';
@@ -24,16 +24,16 @@ import PasswordOtpScreen from '../screens/PasswordOtpScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const LoginStack = () => {
-        return (
-                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
-                        <Stack.Screen name="Login" component={LoginScreen} />
-                        <Stack.Screen name="Home" component={HomeScreen} />
-                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
-                </Stack.Navigator>
-        );
-}
+// const LoginStack = () => {
+//         return (
+//                 <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
+//                         <Stack.Screen name="Login" component={LoginScreen} />
+//                         <Stack.Screen name="Home" component={HomeScreen} />
+//                         <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+//                         <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
+//                 </Stack.Navigator>
+//         );
+// }
 
 const HomeStack = () => {
         return (
@@ -42,6 +42,8 @@ const HomeStack = () => {
                         <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
                         <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        <Stack.Screen name="EmpData" component={EmpDataTable} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
                 </Stack.Navigator>
         );
 };
