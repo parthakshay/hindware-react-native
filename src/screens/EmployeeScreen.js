@@ -13,19 +13,18 @@ const EmployeeScreen = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.container}>
-                <View><HeadBar/></View>
                     <View>
                         <Text style={styles.title}> Details </Text>
                     </View>
                     <View style={{ alignSelf: 'center', alignContent: 'center', alignItems: 'center', marginTop: 10 }}>
                         <Text>Rohit Reddy</Text>
-                        
+
                         <Text>Zonal Manager</Text>
-                        
+
                         <Text><ReportDate /></Text>
-                        
+
                         <Text>Andhra Pradesh</Text>
-                        
+
                         <Text><GetDate /></Text>
                     </View>
                     <View style={{ backgroundColor: '#fefefe' }}>
@@ -36,7 +35,7 @@ const EmployeeScreen = ({ navigation }) => {
                         </View>
                         <Pressable
                             style={styles.buttonStyle}
-                            onPress={() => navigation.navigate('Home')}>
+                            onPress={() => navigation.navigate('#')}>
                             <Text style={styles.buttonTextStyle}>Sign In</Text>
                         </Pressable>
                     </View>

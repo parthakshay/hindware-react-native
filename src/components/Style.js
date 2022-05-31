@@ -33,6 +33,9 @@ export default StyleSheet.create({
   },
 
   title: {
+    padding: 20,
+    margin: 20,
+    fontSize: 20,
     fontSize: hp('3.61%'),
     marginLeft: wp('7.63%')
   },
