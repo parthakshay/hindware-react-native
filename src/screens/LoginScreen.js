@@ -1,10 +1,11 @@
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, ScrollView, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, ScrollView, TextInput, Alert, ActivityIndicator } from 'react-native';
 import Style from '../components/Style';
 import TextBox from 'react-native-password-eye';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+
 
 
 const styles = StyleSheet.create(Style)
@@ -29,7 +30,7 @@ export default class LoginScreen extends Component {
                         this.setState({ loading: true })
                         return true;
                 }
-                Alert.alert('Enter the Username, Password or role')
+                Alert.alert('Enter the Username, Password or Role')
                 return false;
         }
 
@@ -46,7 +47,7 @@ export default class LoginScreen extends Component {
                                                 try {
                                                         AsyncStorage.setItem('@sih_info', response_data)
                                                         AsyncStorage.setItem('loggeIn', login)
-                                                        this.props.navigation.navigate('EmpData')
+                                                        this.props.navigation.navigate('Home')
                                                         this.setState({ loading: false })
                                                 } catch (e) {
                                                         Alert.alert(e, 'Please try again, something went wrong')
@@ -84,7 +85,7 @@ export default class LoginScreen extends Component {
                                                 ></Image>
                                                 <View >
                                                         <View style={{ flexDirection: 'column', alignSelf: 'center' }}>
-                                                                <TextBox
+                                                                <TextInput
                                                                         style={styles.labelUsername}
                                                                         placeholder="Username"
                                                                         keyboardType="default"
@@ -98,13 +99,14 @@ export default class LoginScreen extends Component {
 
 
                                                         <View style={{ flexDirection: 'column', alignSelf: 'center', marginTop: 10 }}>
-                                                                <TextBox
-                                                                        // secureTextEntry={true}
+                                                                <TextInput
+                                                        
                                                                         style={styles.labelTextbox}
                                                                         returnKeyType='go'
                                                                         autoCorrect={false}
                                                                         placeholder="Password"
                                                                         keyboardType="default"
+                                                                        secureTextEntry={true}
                                                                         value={this.state.password}
                                                                         onChangeText={password => this.setState({ password })}
                                                                 // onChangeText={(value) => this.setState({ password: value })}
@@ -122,7 +124,7 @@ export default class LoginScreen extends Component {
                                                         </Text>
 
                                                         <View style={{ flexDirection: 'column', marginTop: 50, alignSelf: 'center' }}>
-
+                                                                
                                                                 <BouncyCheckbox
                                                                         style={styles.checkbox}
                                                                         size={25}

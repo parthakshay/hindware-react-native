@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 import DatePicker from '../components/DatePicker';
@@ -21,8 +21,6 @@ const NewEmpScreen = ({ navigation }) => {
                                 placeholder="Name"
                                 keyboardType="default"
                             ></TextInput>
-
-                            <View><DatePicker /></View>
                             
                             <TextInput
                                 style={styles.labelTextbox}
@@ -49,6 +47,9 @@ const NewEmpScreen = ({ navigation }) => {
                                 placeholder="Enployee Type"
                                 keyboardType="default"
                             ></TextInput>
+                            <View>
+                                <DatePicker />
+                            </View>
                         </View>
                     </KeyboardAvoidingView>
 

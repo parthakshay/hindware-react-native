@@ -24,20 +24,29 @@ import PasswordOtpScreen from '../screens/PasswordOtpScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// const LoginStack = () => {
-//         return (
-//                 <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
-//                         <Stack.Screen name="Login" component={LoginScreen} />
-//                         <Stack.Screen name="Home" component={HomeScreen} />
-//                         <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-//                         <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
-//                 </Stack.Navigator>
-//         );
-// }
+const LoginStack = () => {
+        return (
+                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false, tabBarStyle: {
+                        display: "none",
+                      },
+                      tabBarButton: () => null, }}>
+                        <Stack.Screen name="Login" component={LoginScreen} />
+                        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+                        <Stack.Screen name="PasswordOtp" component={PasswordOtpScreen} />
+                        <Stack.Screen name="NewEmp" component={NewEmpScreen} />
+                        <Stack.Screen name="Home" component={HomeScreen} />
+                        <Stack.Screen name="Report" component={ReportScreen} />
+                        <Stack.Screen name="Transactions" component={TransactionFormScreen} />
+                        <Stack.Screen name="Employee" component={EmployeeScreen} />
+                        <Stack.Screen name="EmpData" component={EmpDataTable} />
+                        <Stack.Screen name="Settings" component={SettingScreen} />
+                </Stack.Navigator>
+        );
+}
 
 const HomeStack = () => {
         return (
-                <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false, tabBarVisibility: false, tabBarVisible: false }}>
+                <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, }}>
                         <Stack.Screen name="Home" component={HomeScreen} />
                         <Stack.Screen name="Login" component={LoginScreen} />
                         <Stack.Screen name="NewEmp" component={NewEmpScreen} />
@@ -85,6 +94,19 @@ export default function RootNavigator() {
                                         activeTintColor: 'tomato',
                                         inactiveTintColor: '#a1a1a1',
                                 }}>
+                                <Tab.Screen name="LoginStack" component={LoginStack}
+                                        options={{
+                                                tabBarLabel: false, headerShown: false, tabBarLabel: 'Login',
+                                                tabBarIcon: ({ color, size }) => (<FontAwesome name="key" size={25} color="#444" />),
+                                                tabBarActiveBackgroundColor: '#fefefe',
+                                                tabBarHideOnKeyboard: true,
+                                                tabBarShowLabel: false,
+                                                // tabBarStyle: {
+                                                //         display: "none",
+                                                //       },
+                                                // tabBarButton: () => null,
+                                        }}
+                                        />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
                                         options={{
                                                 tabBarLabel: false, headerShown: false, tabBarLabel: 'Home',
@@ -94,15 +116,7 @@ export default function RootNavigator() {
                                                 tabBarShowLabel: false,
                                         }} />
 
-                                <Tab.Screen name="Transactions"
-                                        component={TransactionStack}
-                                        options={{
-                                                headerShown: false, tabBarLabel: 'Transactions', tabBarIcon: ({ color, size }) => (
-                                                        <FontAwesome name="file-invoice-dollar" size={25} color="#444" />),
-                                                tabBarActiveBackgroundColor: '#fefefe',
-                                                tabBarHideOnKeyboard: true,
-                                                tabBarShowLabel: true,
-                                        }} />
+                                
 
                                 <Tab.Screen name="SettingsStack" component={SettingsStack} options={{
                                         headerShown: false, tabBarLabel: 'Settings', tabBarIcon: ({ color, size }) => (

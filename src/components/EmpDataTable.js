@@ -46,10 +46,6 @@ export default class EmpDataTable extends Component {
 
 
     return (
-      <>
-        <Appbar style={styles.headbar}>
-          <Text style={{ fontSize: 18, padding: 10, marginTop: 10 }}>Signed in  as {this.state.signedin} </Text>
-        </Appbar>
         <View style={styles.container}>
           <Table borderStyle={{ borderColor: 'transparent' }}>
             <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
@@ -66,17 +62,6 @@ export default class EmpDataTable extends Component {
             }
           </Table>
         </View>
-        <Text>
-          click here to see the details of employee
-        </Text>
-        <Pressable
-          style={styles.plusButtonStyle}
-          onPress={() => this.props.navigation.navigate("Employee")}>
-          <Text style={styles.plusButtonTextStyle}>+</Text>
-
-        </Pressable>
-
-      </>
     )
   }
 }

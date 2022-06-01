@@ -34,10 +34,10 @@ export default StyleSheet.create({
 
   title: {
     padding: 20,
-    margin: 20,
     fontSize: 20,
     fontSize: hp('3.61%'),
-    marginLeft: wp('7.63%')
+    marginLeft: wp('7.63%'),
+
   },
   buttonTextStyle: {
     color: colors.white,
@@ -47,10 +47,11 @@ export default StyleSheet.create({
   plusButtonStyle: {
     height: hp('6.70%'),
     width: wp('11.94%'),
-    borderRadius: 50,
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.red,
+    marginRight: wp('7.63%')
   },
   textDanger: {
     color: colors.paleRed
@@ -63,7 +64,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     alignContent: 'center',
     textAlign: 'center',
-    textAlignVertical: 'center'
+    textAlignVertical: 'center',
   },
   labelUsername: {
     top: 30,
@@ -101,6 +102,39 @@ export default StyleSheet.create({
     marginTop: hp('6.02%'),
     height: hp('7.22%'),
     backgroundColor: colors.paleRed,
-  }
+  },
+  logOutButtonTextStyle: {
+    color: colors.white,
+    fontSize: hp('5%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignContent: 'center',
+    textAlign: 'center',
+    textAlignVertical: 'center'
+  },
+  logOutButton: {
+    height: hp('6.70%'),
+    width: wp('11.94%'),
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: colors.red,
+  },
+  plusButton:{
+    paddingRight: wp('7.63%'),
+    marginRight: wp('7.63%'),
 
+
+  },
+  homePageIcons: {
+    flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        alignContent: 'center',
+        
+  },
+  
 });

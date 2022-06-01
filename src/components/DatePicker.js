@@ -18,10 +18,11 @@ const DatePickerApp = () => {
                     mode="date"
                     placeholder="select date"
                     format="DD/MM/YYYY"
-                    minDate="01-01-1900"
-                    maxDate="01-01-2100"
+                    minDate="01-01-1975"
+                    maxDate="01-01-2025"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
+                    useNativeDriver="true"
                     customStyles={{
                         dateIcon: {
                             position: 'absolute',
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     datePickerStyle: {
-        flex:1,
+        
     },
     text: {
         textAlign: 'left',
