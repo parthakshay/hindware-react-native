@@ -8,7 +8,7 @@ const Headbar = ({navigation}) => {
 
   return (
     <Appbar.Header style={styles.headbar}>
-      <Appbar.Content title='Transactions'/>
+      <Appbar.Content title='Employee Data'/>
     </Appbar.Header>
   );
 };

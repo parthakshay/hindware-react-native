@@ -63,7 +63,7 @@ const HomeScreen = ({ navigation }) => {
 
 
 
-        <View>
+        <View style={{justifyContent: 'flex-end',alignItems: 'auto',}}>
             <Pressable
               style={styles.logOutButton}
               onPress={() => navigation.navigate("Login")}>

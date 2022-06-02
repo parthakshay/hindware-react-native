@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, Pressable, Image, SafeAreaView, TextInput, ScrollView, Linking } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 import DatePicker from '../components/DatePicker';
 import HeadBar from '../components/HeadBar';
 import Style from '../components/Style';
@@ -47,7 +48,7 @@ const NewEmpScreen = ({ navigation }) => {
                                 placeholder="Enployee Type"
                                 keyboardType="default"
                             ></TextInput>
-                            <View>
+                            <View style={{}}>
                                 <DatePicker />
                             </View>
                         </View>

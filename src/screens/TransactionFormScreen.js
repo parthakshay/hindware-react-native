@@ -19,9 +19,6 @@ const TransactionForm = ({ navigation }) => {
                                 placeholder="Product ID"
                                 keyboardType="default"
                             ></TextInput>
-
-                            <TransactionDate />
-
                             <TextInput
                                 style={styles.labelTextbox}
                                 placeholder="Dealer ID"
@@ -32,10 +29,12 @@ const TransactionForm = ({ navigation }) => {
                                 placeholder="Amount"
                                 keyboardType="numeric"
                             ></TextInput>
-
+                            <View style={{marginTop:50}}>
+                                <TransactionDate />
+                            </View>
                         </View>
 
-                        <View style={{ height: 60 }} />
+                        <View style={{ height: 25 }} />
                         <View>
                             <Pressable
                                 style={styles.buttonStyle}

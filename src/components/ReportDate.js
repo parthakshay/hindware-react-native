@@ -2,45 +2,45 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { colors } from '../theme/colors';
+import colors from '../theme/colors'
 
 
 const DatePickerApp = () => {
     const [date, setDate] = useState(new Date());
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
             <View style={styles.container}>
-                <Text style={styles.text}>Report Date:</Text>
+                <Text style={styles.text}>Date of Report:</Text>
                 <DatePicker
                     style={styles.datePickerStyle}
                     date={date}
                     mode="date"
                     placeholder="select date"
                     format="DD/MM/YYYY"
-                    minDate="01-09-2000"
-                    maxDate="01-09-2100"
+                    minDate="01-01-1995"
+                    maxDate="01-01-2030"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
+                    useNativeDriver="true"
                     customStyles={{
                         dateIcon: {
                             position: 'absolute',
-                            right: -5,
-                            top: 4,
+                            right: 0,
+                            top: 5,
                             marginLeft: 0,
                         },
                         dateInput: {
-                            borderColor: '#343434',
+                            borderColor: "gray",
                             alignItems: "flex-start",
                             borderWidth: 0,
-                            borderBottomWidth: 0.5,
                         },
                         placeholderText: {
                             fontSize: 20,
-                            color: '#a1a1a1'
+                            color: "gray"
                         },
                         dateText: {
-                            fontSize: 20,
+                            fontSize: 18,
                         }
                     }}
                     onDateChange={(date) => {
@@ -57,20 +57,21 @@ export default DatePickerApp;
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        marginTop: hp('7.5%'),
     },
     title: {
-        textAlign: 'left',
-        fontSize: 20,
-        fontWeight: 'bold',
+        textAlign: 'center',
+        fontSize: hp('3.61%'),
+        fontWeight: '500',
     },
     datePickerStyle: {
-        width: 250,
+        width: wp('80%'),
     },
     text: {
         textAlign: 'left',
-        width: 230,
-        fontSize: 16,
-        color: '#343434'
+        width: wp('80%'),
+        fontSize: 20,
+        color: "gray"
     }
 })

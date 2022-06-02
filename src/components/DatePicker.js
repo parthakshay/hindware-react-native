@@ -9,7 +9,7 @@ const DatePickerApp = () => {
     const [date, setDate] = useState(new Date());
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
             <View style={styles.container}>
                 <Text style={styles.text}>Date of Joining:</Text>
                 <DatePicker
@@ -58,14 +58,15 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'flex-start',
+        marginTop: hp('7.5%'),
     },
     title: {
-        textAlign: 'left',
-        fontSize: 30,
-        fontWeight: 'bold',
+        textAlign: 'center',
+        fontSize: hp('3.61%'),
+        fontWeight: '500',
     },
     datePickerStyle: {
-        
+        width: wp('80%'),
     },
     text: {
         textAlign: 'left',

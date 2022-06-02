@@ -101,10 +101,10 @@ export default function RootNavigator() {
                                                 tabBarActiveBackgroundColor: '#fefefe',
                                                 tabBarHideOnKeyboard: true,
                                                 tabBarShowLabel: false,
-                                                // tabBarStyle: {
-                                                //         display: "none",
-                                                //       },
-                                                // tabBarButton: () => null,
+                                                tabBarStyle: {
+                                                        display: "none",
+                                                      },
+                                                tabBarButton: () => null,
                                         }}
                                         />
                                 <Tab.Screen name="HomeStack" component={HomeStack}
@@ -114,6 +114,10 @@ export default function RootNavigator() {
                                                 tabBarActiveBackgroundColor: '#fefefe',
                                                 tabBarHideOnKeyboard: true,
                                                 tabBarShowLabel: false,
+                                                tabBarStyle: {
+                                                        display: "none",
+                                                      },
+                                                tabBarButton: () => null,
                                         }} />
 
                                 
@@ -123,6 +127,10 @@ export default function RootNavigator() {
                                                 <FontAwesome name="cog" size={25} color="#444" />),
                                         tabBarActiveBackgroundColor: '#fefefe', tabBarHideOnKeyboard: true,
                                         tabBarShowLabel: false,
+                                        tabBarStyle: {
+                                                display: "none",
+                                              },
+                                        tabBarButton: () => null,
                                 }} />
                         </Tab.Navigator>
                 </NavigationContainer>

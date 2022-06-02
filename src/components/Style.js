@@ -73,8 +73,9 @@ export default StyleSheet.create({
     height: hp('6.02%'),
     width: wp('80.33%'),
     alignItems: 'center',
-    textAlign: 'left',
-    display: 'flex'
+    textAlign: 'center',
+    display: 'flex',
+
 
   },
   labelTextbox: {
@@ -83,9 +84,10 @@ export default StyleSheet.create({
     borderRadius: 10,
     height: hp('6.02%'),
     width: wp('80.33%'),
-    textAlign: 'left',
+    textAlign: 'center',
     alignItems: 'center',
-    display: 'flex'
+    display: 'flex',
+    marginTop: hp('2.40%'),
 
   },
 
@@ -116,25 +118,31 @@ export default StyleSheet.create({
   logOutButton: {
     height: hp('6.70%'),
     width: wp('11.94%'),
-    borderRadius: 50,
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-end',
     backgroundColor: colors.red,
+    marginRight: wp('7.63%'),
+    marginTop: hp('40.00%'),
   },
+  
   plusButton:{
     paddingRight: wp('7.63%'),
     marginRight: wp('7.63%'),
 
-
   },
+
   homePageIcons: {
     flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        alignContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignContent: 'center',
         
   },
-  
+  containerTable: {
+    
+      flex: 1,
+    },
 });

@@ -91,6 +91,7 @@ export default class LoginScreen extends Component {
                                                                         keyboardType="default"
                                                                         value={this.state.username}
                                                                         onChangeText={username => this.setState({ username })}
+                                                                        
 
                                                                 // onChangeText={(value) => this.setState({ username: value })}
                                                                 />

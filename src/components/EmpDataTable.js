@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Alert, Pressable } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Alert, Pressable, SafeAreaView } from 'react-native';
 import { Appbar } from 'react-native-paper';
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 import { colors } from '../theme/colors';
@@ -8,6 +8,8 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
+
+
 export default class EmpDataTable extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,9 @@ export default class EmpDataTable extends Component {
 
 
     return (
-        <View style={styles.container}>
+
+        <View style={styles.containerTable}>
+
           <Table borderStyle={{ borderColor: 'transparent' }}>
             <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
             {
@@ -67,7 +71,7 @@ export default class EmpDataTable extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fefefe' },
+  containerTable: { flex: 1, padding: 20, paddingTop: 30, backgroundColor: '#fefefe', marginTop: hp('2%') },
   head: { height: 40, backgroundColor: '#a1a1a1' },
   text: { margin: 6 },
   row: { flexDirection: 'row', backgroundColor: '#fff1c1' },

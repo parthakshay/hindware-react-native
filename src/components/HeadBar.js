@@ -22,9 +22,6 @@ export default class Headbar extends Component {
   }
 render() {
     const state = this.state;
-    ;
-
-
   return (
     <Appbar.Header style={styles.headbar}>
       <Text style={{ fontSize: 18, padding: 10, marginTop: 10 }}>Signed in as {this.state.signedin} </Text>

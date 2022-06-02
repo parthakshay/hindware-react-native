@@ -5,12 +5,10 @@ import {StyleSheet, View} from 'react-native';
 const styles = StyleSheet.create(Style)
 
 const Headbar = ({navigation}) => {
-  const _goBack = () => navigation.navigate('Settings');
 
   return (
     <Appbar.Header style={styles.headbar}>
-      <Appbar.BackAction onPress={_goBack} />
-      <Appbar.Content title='Settings' onPress={_goBack} />
+      <Appbar.Content title='Settings'/>
     </Appbar.Header>
   );
 };
